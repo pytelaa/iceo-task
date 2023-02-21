@@ -16,12 +16,11 @@ public class LatestEndpointTests {
     public static void setUp(){
         RestAssured.baseURI = "https://api.apilayer.com";
         RestAssured.basePath = "/exchangerates_data/latest";
-
     }
 
     @Test
     public void test1(){
-        Response response = given().header("apikey", "gNPtAXObSQdXu0MccUvPjpJ0ElfRHpSf")
+        Response response = given().headers("apikey", "gNPtAXObSQdXu0MccUvPjpJ0ElfRHpSf")
                 .when().get();
 
 //        Response response = when().get("https://api.exchangeratesapi.io/v1/latest?access_key=sHsr44ejNHHc36OTdQNfFxdCYoHQsFbq");
