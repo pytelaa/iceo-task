@@ -62,7 +62,7 @@ public class Stepdefs {
     @And("exchanging {string} to {string} and then back to {string} returns similar rate as on the beginning")
     public void exchangingToAndThenBackToReturnsSimilarRateAsOnTheBeginning(String currency1, String currency2, String arg2) {
         float rateCurrency2 = latestResponse.getBody().jsonPath().get("rates." + currency1);
-        assertTrue( Math.abs(savedRate-rateCurrency2)  > 0.01);
+        assertTrue( Math.abs((savedRate*rateCurrency2)-1)  < 0.01);
     }
 
     @And("user saves rate for {string}")
